@@ -1,20 +1,20 @@
 <template>
-  <nav class="sticky top-0 z-50 bg-[#F2F2F2]/90 backdrop-blur-md border-b border-[#D7D7D9] px-6 py-4">
+  <nav class="sticky top-0 z-50 bg-[#FFF]/80 backdrop-blur-xl border-b border-gray-100 px-6 py-4">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <NuxtLink to="/" class="flex items-center gap-2 group">
-        <div class="bg-[#404040] text-[#F2F2F2] w-10 h-10 flex items-center justify-center rounded-sm font-black text-xl transition-transform group-hover:scale-105">
+      <NuxtLink to="/" class="flex items-center gap-3 group">
+        <div class="bg-[#022326] text-[#FFF] w-10 h-10 flex items-center justify-center rounded-xl font-black text-xl transition-all group-hover:bg-[#02735E] group-hover:rotate-3 shadow-lg shadow-[#022326]/10">
           D
         </div>
-        <span class="text-[#404040] font-black text-2xl tracking-tighter">DACAV</span>
+        <span class="text-[#022326] font-black text-2xl tracking-tighter italic transition-colors group-hover:text-[#02735E]">DACAV</span>
       </NuxtLink>
 
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden md:flex items-center gap-10">
         <NuxtLink 
           v-for="item in navLinks" 
           :key="item.path" 
           :to="item.path"
-          class="nav-link text-[#595959] hover:text-[#404040] font-medium text-sm uppercase tracking-widest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#404040] hover:after:w-full after:transition-all"
+          class="nav-link text-[#034040]/70 hover:text-[#02735E] font-bold text-[11px] uppercase tracking-[0.2em] transition-all relative py-2"
         >
           {{ item.name }}
         </NuxtLink>
@@ -23,44 +23,43 @@
       <div class="hidden md:block">
         <NuxtLink 
           to="/contact" 
-          class="cta-button bg-[#404040] text-[#F2F2F2] !text-[#F2F2F2] px-5 py-2 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-[#595959] transition-colors"
+          class="bg-[#022326] text-white px-7 py-3 rounded-full text-[11px] font-black uppercase tracking-[0.2em] hover:bg-[#02735E] hover:shadow-xl hover:shadow-[#02735E]/20 transition-all active:scale-95 inline-block"
         >
           Cotizar
         </NuxtLink>
       </div>
 
-      <button @click="isMenuOpen = !isMenuOpen" class="md:hidden text-[#404040] p-2">
-        <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+      <button @click="isMenuOpen = !isMenuOpen" class="md:hidden text-[#022326] p-2 hover:bg-gray-100 rounded-lg transition-colors">
+        <div class="w-6 h-5 relative flex flex-col justify-between">
+          <span :class="['w-full h-0.5 bg-current transition-all', isMenuOpen ? 'rotate-45 translate-y-2' : '']"></span>
+          <span :class="['w-full h-0.5 bg-current transition-all', isMenuOpen ? 'opacity-0' : '']"></span>
+          <span :class="['w-full h-0.5 bg-current transition-all', isMenuOpen ? '-rotate-45 -translate-y-2' : '']"></span>
+        </div>
       </button>
     </div>
 
     <Transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="opacity-0 -translate-y-4"
+      enter-active-class="transition duration-300 ease-out"
+      enter-from-class="opacity-0 -translate-y-10"
       enter-to-class="opacity-100 translate-y-0"
-      leave-active-class="transition duration-150 ease-in"
+      leave-active-class="transition duration-200 ease-in"
       leave-from-class="opacity-100 translate-y-0"
-      leave-to-class="opacity-0 -translate-y-4"
+      leave-to-class="opacity-0 -translate-y-10"
     >
-      <div v-if="isMenuOpen" class="md:hidden absolute top-full left-0 w-full bg-[#F2F2F2] border-b border-[#D7D7D9] px-6 py-8 flex flex-col gap-6 shadow-xl">
+      <div v-if="isMenuOpen" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 px-8 py-12 flex flex-col gap-8 shadow-2xl">
         <NuxtLink 
           v-for="item in navLinks" 
           :key="item.path" 
           :to="item.path"
           @click="isMenuOpen = false"
-          class="text-[#404040] font-bold text-xl uppercase tracking-widest border-l-4 border-transparent hover:border-[#B0B7BF] pl-4 transition-all"
+          class="text-[#022326] font-black text-2xl uppercase tracking-tighter border-l-4 border-transparent hover:border-[#02735E] pl-6 transition-all"
         >
           {{ item.name }}
         </NuxtLink>
         <NuxtLink 
           to="/contact" 
           @click="isMenuOpen = false"
-          class="bg-[#404040] text-[#F2F2F2] text-center py-4 rounded-sm font-black uppercase tracking-widest"
+          class="bg-[#02735E] text-white text-center py-5 rounded-2xl font-black uppercase tracking-widest shadow-lg shadow-[#02735E]/20"
         >
           Solicitar Cotización
         </NuxtLink>
@@ -84,14 +83,26 @@ const navLinks = [
 </script>
 
 <style scoped>
-/* Solo aplicamos el estilo de "activo" a los links normales, no al botón */
-.nav-link.router-link-active {
-  color: #404040 !important;
-  font-weight: 800;
+/* Línea de hover refinada */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #02735E;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
-/* Forzamos que el botón siempre mantenga su color de texto original */
-.cta-button {
-  color: #F2F2F2 !important;
+.nav-link:hover::after,
+.nav-link.router-link-active::after {
+  width: 60%;
+}
+
+.nav-link.router-link-active {
+  color: #02735E !important;
+  opacity: 1;
 }
 </style>
