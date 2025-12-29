@@ -49,10 +49,10 @@
                 Ver proyectos
               </NuxtLink>
             </div>
-          </div>          
+          </div>
         </div>
       </div>
-      
+
     </section>
 
     <!-- Servicios Section -->
@@ -252,19 +252,13 @@
         <p class="text-gray-600 text-xl md:text-2xl mb-16 leading-relaxed max-w-3xl mx-auto">
           Si necesitas una página web profesional para tu negocio o quieres mejorar la que ya tienes, conversemos.
         </p>
-        <NuxtLink
-  to="/contact"
-  class="group relative bg-gradient-to-r from-emerald-600 to-cyan-600 text-white px-16 py-6 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:shadow-2xl hover:shadow-emerald-500/50 transform hover:-translate-y-2 transition-all duration-300 overflow-hidden inline-block no-underline"
->
-  <span class="relative z-10">Contactar ahora</span>
-  <div
-    class="absolute inset-0 bg-gradient-to-r from-emerald-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-  </div>
-</NuxtLink>
-
-        <div class="mt-20 pt-12 border-t border-gray-100">
-          <p class="text-gray-500 text-sm tracking-widest uppercase">DACAV • Estudio de Desarrollo Web</p>
-        </div>
+        <NuxtLink to="/contact"
+          class="group relative bg-gradient-to-r from-emerald-600 to-cyan-600 text-white px-16 py-6 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:shadow-2xl hover:shadow-emerald-500/50 transform hover:-translate-y-2 transition-all duration-300 overflow-hidden inline-block no-underline">
+          <span class="relative z-10">Contactar ahora</span>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-emerald-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+        </NuxtLink>
       </div>
 
       <!-- Elementos decorativos -->
