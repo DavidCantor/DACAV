@@ -2,7 +2,7 @@
   <div class="bg-white min-h-screen font-sans text-gray-900">
     
     <!-- Hero Section con imagen -->
-    <section class="relative py-24 px-4 sm:px-6 overflow-hidden">
+    <section class="relative py-44 px-4 sm:px-6 overflow-hidden">
       <!-- Imagen de fondo hero -->
       <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-emerald-900/85"></div>
@@ -41,29 +41,29 @@
         <!-- Imagen del proyecto -->
         <div class="lg:col-span-7">
           <div class="group relative">
-            <div class="bg-gradient-to-br from-gray-900 to-gray-800 aspect-video rounded-3xl overflow-hidden shadow-2xl relative">
-              <!-- Imagen de fondo del proyecto -->
-              <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-30"></div>
-              
-              <!-- Overlay de gradiente -->
-              <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-              
-              <!-- Contenido sobre la imagen -->
-              <div class="absolute inset-0 flex items-center justify-center z-20">
-                <div class="text-center space-y-6">
-                  <div class="w-20 h-20 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto shadow-2xl shadow-emerald-500/30">
-                    A
-                  </div>
-                  <p class="text-white/20 font-black text-4xl md:text-5xl tracking-tighter">ASCONFI-JY</p>
-                </div>
-              </div>
-              
-              <!-- Botón visitar sitio -->
-              <a href="https://asconfijy.netlify.app/" target="_blank" 
-                 class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white text-gray-900 px-6 py-3 rounded-full font-bold text-sm shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                Visitar sitio ↗
-              </a>
-            </div>
+            <div class="group bg-gradient-to-br from-gray-900 to-gray-800 aspect-video rounded-3xl overflow-hidden shadow-2xl relative">
+  
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-30"></div>
+  
+  <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+  
+  <div class="absolute inset-0 flex items-center justify-center z-20">
+    <div class="text-center space-y-6">
+      <div class="w-20 h-20 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto shadow-2xl shadow-emerald-500/30">
+        A
+      </div>
+      <p class="text-white/20 font-black text-4xl md:text-5xl tracking-tighter">ASCONFI-JY</p>
+    </div>
+  </div>
+  
+  <a href="https://asconfijy.netlify.app/" target="_blank" rel="noopener noreferrer"
+     class="absolute bottom-8 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 
+            group-hover:opacity-100 group-hover:translate-y-0 
+            bg-white text-gray-900 px-6 py-3 rounded-full font-bold text-sm shadow-2xl 
+            transition-all duration-500 z-30">
+    Visitar sitio ↗
+  </a>
+</div>
             
             <!-- Marco decorativo con patrón -->
             <div class="absolute -inset-4 border-2 border-emerald-200/30 rounded-3xl -z-10 group-hover:border-emerald-400/50 transition-colors">
@@ -248,70 +248,216 @@
     </section>
 
     <!-- Pilares Técnicos -->
-    <section class="py-20 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-16">
-          <h3 class="text-gray-900 text-3xl font-bold tracking-tight mb-4">Nuestros Pilares Técnicos</h3>
-          <p class="text-gray-600 max-w-2xl mx-auto">Bases sólidas para cada proyecto que desarrollamos</p>
+        <!-- Pilares Técnicos - Rediseñado -->
+    <section class="py-24 px-4 sm:px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <!-- Encabezado mejorado -->
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center gap-3 px-5 py-2 bg-emerald-500/10 rounded-full text-emerald-600 text-sm font-semibold uppercase tracking-wider mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Fundamentos Técnicos
+          </div>
+          <h3 class="text-gray-900 text-4xl md:text-5xl font-bold tracking-tight mb-6">Nuestros Pilares Técnicos</h3>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Los principios fundamentales que guían cada línea de código que escribimos</p>
         </div>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Grid de pilares - Nuevo diseño -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div v-for="(tag, index) in focusTags" :key="tag" 
-               class="group bg-white border border-gray-200 rounded-2xl p-6 text-center hover:border-emerald-300 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
-            <!-- Imagen de fondo para cada pilar -->
-            <div class="absolute inset-0 opacity-5">
-              <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+               class="group relative">
+            <!-- Card principal -->
+            <div class="relative bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-200 transition-all duration-500 h-full overflow-hidden">
+              
+              
+              <!-- Elemento decorativo superior -->
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              
+              <div class="relative z-10">
+                <!-- Número con efecto 3D -->
+                <div class="relative mb-8">
+                  <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mx-auto shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
+                    {{ index + 1 }}
+                  </div>
+                  <!-- Efecto de sombra detrás -->
+                  <div class="absolute inset-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl blur-md opacity-30 -z-10 mx-auto left-1/2 -translate-x-1/2"></div>
+                </div>
+                
+                <!-- Título del pilar -->
+                <h4 class="text-gray-900 font-bold text-xl mb-4 text-center group-hover:text-emerald-600 transition-colors">
+                  {{ tag }}
+                </h4>
+                
+                <!-- Descripción del pilar -->
+                <p class="text-gray-500 text-sm text-center leading-relaxed mb-6">
+                  <span v-if="tag === 'Código Limpio'">Estructura clara, convenciones consistentes y documentación precisa.</span>
+                  <span v-else-if="tag === 'Arquitectura SSR'">Renderizado del lado del servidor para máxima velocidad y SEO.</span>
+                  <span v-else-if="tag === 'Escalabilidad'">Sistemas preparados para crecer con tu negocio.</span>
+                  <span v-else-if="tag === 'Rendimiento SEO'">Optimización técnica para mejor posicionamiento.</span>
+                  <span v-else>Protección de datos y protocolos de seguridad robustos.</span>
+                </p>
+                
+                <!-- Icono representativo -->
+                <div class="flex justify-center mb-4">
+                  <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 text-lg">
+                    <span v-if="tag === 'Código Limpio'">✏️</span>
+                    <span v-else-if="tag === 'Arquitectura SSR'">⚡</span>
+                    <span v-else-if="tag === 'Escalabilidad'">📈</span>
+                    <span v-else-if="tag === 'Rendimiento SEO'">🔍</span>
+                    <span v-else>🔒</span>
+                  </div>
+                </div>
+              </div>
+              
+              
             </div>
             
-            <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto relative z-10">
-              {{ index + 1 }}
-            </div>
-            <h4 class="text-gray-900 font-semibold text-sm uppercase tracking-wider group-hover:text-emerald-600 transition-colors relative z-10">
-              {{ tag }}
-            </h4>
+            <!-- Efecto de sombra exterior -->
+            <div class="absolute -inset-4 border-2 border-emerald-100 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Final con imagen -->
+        <!-- CTA Final - Rediseñado -->
     <section class="relative py-20 px-4 sm:px-6 overflow-hidden">
-      <!-- Imagen de fondo CTA -->
+      <!-- Fondo con gradiente dinámico -->
       <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-white to-emerald-50/30"></div>
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-cyan-50"></div>
+        <!-- Patrones decorativos -->
+        <div class="absolute top-0 left-0 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+        <!-- Imagen de fondo sutil -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-[0.02]"></div>
       </div>
       
-      <div class="max-w-4xl mx-auto relative z-10">
-        <div class="bg-white/80 backdrop-blur-sm border-2 border-emerald-200 rounded-3xl p-8 md:p-12 text-center shadow-xl">
-          <h2 class="text-gray-900 text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            ¿Quieres un proyecto <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">similar?</span>
-          </h2>
-          <p class="text-gray-600 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Si buscas una identidad digital única o un sistema que automatice tu operación, hagámoslo realidad.
-          </p>
+      <div class="max-w-6xl mx-auto relative z-10">
+        <!-- Card principal -->
+        <div class="relative group">
+          <!-- Efecto de borde animado -->
+          <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
           
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <NuxtLink to="/contact" 
-              class="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-8 py-4 rounded-full font-bold text-sm hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 inline-flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-              </svg>
-              Solicitar cotización
-            </NuxtLink>
+          <!-- Contenido principal -->
+          <div class="relative bg-white rounded-3xl p-8 md:p-16 text-center border-2 border-white shadow-2xl overflow-hidden">
+            <!-- Elementos decorativos internos -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl -translate-y-16 translate-x-16"></div>
+            <div class="absolute bottom-0 left-0 w-40 h-40 bg-cyan-500/5 rounded-full blur-2xl translate-y-16 -translate-x-16"></div>
             
-            <NuxtLink to="/services" 
-              class="bg-white text-gray-900 border border-gray-300 px-8 py-4 rounded-full font-bold text-sm hover:bg-gray-50 transition-all duration-300 inline-flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-              </svg>
-              Ver servicios
-            </NuxtLink>
+            <div class="relative z-10">
+              
+              
+              <!-- Título principal -->
+              <h2 class="text-gray-900 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
+                ¿Listo para <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">transformar</span> tu visión digital?
+              </h2>
+              
+              <!-- Descripción -->
+              <p class="text-gray-600 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                Si buscas una identidad digital única o un sistema que automatice tu operación, hagámoslo realidad. 
+                <span class="block mt-2 text-gray-500 text-base">Sin compromisos, solo soluciones concretas.</span>
+              </p>
+              
+              <!-- CTA Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto mb-12">
+                <!-- Botón principal -->
+                <NuxtLink to="/contact" 
+                  class="group/btn bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-8 py-5 rounded-2xl font-bold text-sm hover:shadow-2xl hover:shadow-emerald-500/40 transition-all duration-500 inline-flex items-center justify-center gap-3 hover:scale-[1.02]">
+                  <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                    </svg>
+                  </div>
+                  <div class="text-left">
+                    <div class="text-lg font-bold">Solicitar cotización</div>
+                    <div class="text-xs opacity-80">Análisis personalizado sin costo</div>
+                  </div>
+                  <svg class="w-5 h-5 ml-auto group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </NuxtLink>
+                
+                <!-- Botón secundario -->
+                <NuxtLink to="/services" 
+                  class="group/btn bg-white border-2 border-gray-200 text-gray-900 px-8 py-5 rounded-2xl font-bold text-sm hover:border-emerald-300 hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center gap-3 hover:scale-[1.02]">
+                  <div class="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                  </div>
+                  <div class="text-left">
+                    <div class="text-lg font-bold">Explorar servicios</div>
+                    <div class="text-xs text-gray-500">Ver todos nuestros enfoques</div>
+                  </div>
+                  <svg class="w-5 h-5 ml-auto text-gray-400 group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </NuxtLink>
+              </div>
+              
+              <!-- Garantías -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto mb-10">
+                <div class="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:border-emerald-100 transition-colors">
+                  <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <div class="text-left">
+                    <div class="font-bold text-gray-900">24 horas</div>
+                    <div class="text-xs text-gray-500">Respuesta inicial</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:border-emerald-100 transition-colors">
+                  <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <div class="text-left">
+                    <div class="font-bold text-gray-900">Sin costo</div>
+                    <div class="text-xs text-gray-500">Consulta inicial</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:border-emerald-100 transition-colors">
+                  <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                  </div>
+                  <div class="text-left">
+                    <div class="font-bold text-gray-900">100% confidencial</div>
+                    <div class="text-xs text-gray-500">Privacidad garantizada</div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Contacto adicional -->
+              <div class="pt-8 border-t border-gray-100">
+                <p class="text-gray-500 text-sm mb-4">¿Prefieres contactarnos directamente?</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                  <a href="mailto:dsantiagocanvar@gmail.com" 
+                     class="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    dsantiagocanvar@gmail.com
+                  </a>
+                  <span class="text-gray-300">•</span>
+                  <a href="https://wa.me/573193831573" 
+                     class="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    +57 319 383 1573
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <p class="text-gray-500 text-sm mt-8">
-            Respuesta en 24 horas • Sin compromiso inicial
-          </p>
         </div>
       </div>
     </section>

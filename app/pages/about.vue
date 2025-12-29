@@ -96,107 +96,74 @@
       </div>
     </section>
 
-    <!-- Workflow de Ingeniería con imágenes -->
-    <section class="py-24 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white">
+        <!-- Workflow de Ingeniería - Rediseñado -->
+    <section class="py-24 px-4 sm:px-6 bg-white">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h3 class="text-gray-900 text-3xl font-bold mb-4 tracking-tight">Workflow de Ingeniería</h3>
-          <p class="text-gray-600 max-w-2xl mx-auto">Un proceso meticuloso para resultados excepcionales</p>
+        <!-- Encabezado -->
+        <div class="text-center mb-20">
+          <div class="inline-flex items-center gap-3 px-5 py-2 bg-emerald-500/10 rounded-full text-emerald-600 text-sm font-semibold uppercase tracking-wider mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Proceso Metódico
+          </div>
+          <h3 class="text-gray-900 text-4xl md:text-5xl font-bold tracking-tight mb-6">Flujo de Trabajo</h3>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Un proceso estructurado que garantiza excelencia técnica en cada entrega</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-          <div v-for="(step, i) in workSteps" :key="i" class="relative group">
-            <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2 transition-all h-full flex flex-col items-center text-center relative overflow-hidden">
-              <!-- Imagen de fondo para cada paso -->
-              <div class="absolute inset-0 opacity-5">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-              </div>
-              
-              <div class="relative z-10">
-                <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg shadow-emerald-500/30">
+        <!-- Steps Timeline -->
+        <div class="relative">
+          <!-- Línea de tiempo -->
+          <div class="hidden md:block absolute left-0 right-0 top-1/2 h-0.5 bg-gradient-to-r from-emerald-100 via-cyan-100 to-emerald-100 -translate-y-1/2"></div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
+            <div v-for="(step, i) in workSteps" :key="i" class="relative">
+              <!-- Card del paso -->
+              <div class="group relative bg-gradient-to-b from-white to-gray-50 border border-gray-100 rounded-2xl p-8 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 h-full">
+                <!-- Número con gradiente -->
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-500/30 z-20">
                   {{ i + 1 }}
                 </div>
-                <p class="text-gray-900 text-sm font-bold uppercase tracking-wider leading-tight">{{ step }}</p>
-              </div>
-            </div>
-            
-            <!-- Conector entre pasos -->
-            <div v-if="i < 4" class="hidden md:block absolute top-1/2 -right-3 translate-y-[-50%] z-10">
-              <div class="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center">
-                <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Aliados y Compromiso -->
-    <section class="py-24 px-4 sm:px-6 bg-white">
-      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-stretch">
-        <div class="flex-1 space-y-10">
-          <div>
-            <h3 class="text-gray-900 text-3xl font-bold tracking-tight mb-4">Aliados estratégicos</h3>
-            <p class="text-gray-600">Diseñamos soluciones para quienes valoran la calidad sobre la inmediatez genérica.</p>
-          </div>
-          
-          <!-- Grid de targets con imágenes de fondo -->
-          <div class="grid grid-cols-2 gap-4">
-            <div v-for="target in targets" :key="target" 
-                 class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-6 hover:border-emerald-300 transition-all">
-              <!-- Imagen de fondo sutil para cada target -->
-              <div class="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80')] bg-cover bg-center"></div>
+                
+                <!-- Icono representativo -->
+                <div class="w-16 h-16 bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-2xl flex items-center justify-center text-emerald-600 text-2xl mb-6 mx-auto group-hover:scale-110 transition-transform">
+                  <span v-if="i === 0">🔍</span>
+                  <span v-else-if="i === 1">🎯</span>
+                  <span v-else-if="i === 2">🏗️</span>
+                  <span v-else-if="i === 3">💻</span>
+                  <span v-else>🚀</span>
+                </div>
+                
+                <!-- Texto del paso -->
+                <div class="text-center">
+                  <h4 class="text-gray-900 font-bold text-lg mb-3">{{ step }}</h4>
+                  <p class="text-gray-500 text-sm leading-relaxed">
+                    <span v-if="i === 0">Análisis profundo de necesidades</span>
+                    <span v-else-if="i === 1">Definición de objetivos claros</span>
+                    <span v-else-if="i === 2">Arquitectura técnica sólida</span>
+                    <span v-else-if="i === 3">Desarrollo con mejores prácticas</span>
+                    <span v-else>Despliegue y seguimiento continuo</span>
+                  </p>
+                </div>
+                
+                <!-- Flecha indicadora en hover -->
+                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div class="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[12px] border-l-transparent border-r-transparent border-t-emerald-500"></div>
+                </div>
               </div>
               
-              <div class="relative z-10">
-                <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-lg mb-4">
-                  {{ target.charAt(0) }}
-                </div>
-                <span class="text-gray-900 font-bold text-sm block">{{ target }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Compromiso con imagen -->
-        <div class="flex-1">
-          <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 md:p-12 text-white rounded-3xl shadow-2xl relative overflow-hidden h-full">
-            <!-- Imagen de fondo compromiso -->
-            <div class="absolute inset-0 opacity-10">
-              <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80')] bg-cover bg-center"></div>
-            </div>
-            
-            <div class="relative z-10">
-              <h4 class="text-2xl font-bold mb-8 tracking-tight">Nuestro compromiso innegociable</h4>
-              <ul class="space-y-6">
-                <li v-for="item in ['Transparencia radical', 'Código limpio y escalable', 'Diseño enfocado en conversión', 'Soporte técnico post-lanzamiento']" 
-                    :key="item" class="flex items-center gap-4 text-lg">
-                  <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
-                    ✓
-                  </div>
-                  <span class="font-medium">{{ item }}</span>
-                </li>
-              </ul>
-              
-              <!-- Stats -->
-              <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-6">
-                <div class="text-center">
-                  <div class="text-emerald-400 text-2xl font-bold">100%</div>
-                  <div class="text-white/60 text-sm">Dedicación</div>
-                </div>
-                <div class="text-center">
-                  <div class="text-emerald-400 text-2xl font-bold">24/7</div>
-                  <div class="text-white/60 text-sm">Soporte</div>
-                </div>
-                <div class="text-center">
-                  <div class="text-emerald-400 text-2xl font-bold">∞</div>
-                  <div class="text-white/60 text-sm">Escalabilidad</div>
+              <!-- Conector en mobile -->
+              <div v-if="i < 4" class="md:hidden flex justify-center my-6">
+                <div class="w-8 h-8 text-emerald-300">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>        
       </div>
     </section>
 

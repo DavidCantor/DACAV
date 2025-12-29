@@ -2,7 +2,7 @@
   <div class="bg-white min-h-screen font-sans text-gray-900">
     
     <!-- Hero Section con imagen -->
-    <section class="relative py-24 px-4 sm:px-6 overflow-hidden">
+    <section class="relative py-44 px-4 sm:px-6 overflow-hidden">
       <!-- Imagen de fondo hero -->
       <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-emerald-900/85"></div>
@@ -27,107 +27,187 @@
       </div>
     </section>
 
-    <!-- Formulario y Información -->
+        <!-- Formulario - Rediseñado -->
     <section class="py-20 px-4 sm:px-6">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         
-        <!-- Formulario con imagen de fondo sutil -->
-        <div class="lg:col-span-7 relative">
-          <div class="bg-white p-8 md:p-12 rounded-3xl border border-gray-200 shadow-2xl shadow-gray-200/30 relative overflow-hidden">
-            <!-- Imagen de fondo sutil para el formulario -->
-            <div class="absolute inset-0 opacity-5">
-              <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80')] bg-cover bg-center"></div>
+        <!-- Formulario simplificado -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 md:p-10">
+            <!-- Encabezado más limpio -->
+            <div class="text-center mb-10">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl mb-6 mx-auto shadow-lg shadow-emerald-500/30">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h2 class="text-gray-900 text-2xl font-bold mb-3">Inicia tu proyecto</h2>
+              <p class="text-gray-600">Completa este formulario y te contactaremos en menos de 24 horas</p>
             </div>
             
-            <div class="relative z-10">
-              <div class="flex items-center gap-4 mb-10">
-                <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-emerald-500/30">
-                  📝
+            <form @submit.prevent="submitForm" class="space-y-6" >
+              <!-- Campos del formulario -->
+              <div class="space-y-6">
+                <!-- Nombre y Email -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Nombre completo</label>
+                    <input 
+                      type="text" 
+                      placeholder="Tu nombre"
+                      v-model="formData.name"
+                      required
+                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors placeholder-gray-400"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Correo electrónico</label>
+                    <input 
+                      type="email" 
+                      placeholder="tu@email.com"
+                      v-model="formData.email"
+                      required
+                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors placeholder-gray-400"
+                    />
+                  </div>
                 </div>
-                <h2 class="text-gray-900 text-lg font-bold uppercase tracking-wider">Brief de Contacto</h2>
+                
+                <!-- Negocio y Tipo de Proyecto -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Nombre del negocio</label>
+                    <input 
+                      type="text" 
+                      placeholder="Empresa o marca"
+                      v-model="formData.business"
+                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors placeholder-gray-400"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Tipo de proyecto</label>
+                    <select 
+                      v-model="formData.projectType"
+                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors appearance-none"
+                    >
+                      <option value="" disabled selected>¿Qué necesitas?</option>
+                      <option value="corporate">Sitio web corporativo</option>
+                      <option value="landing">Landing page</option>
+                      <option value="system">Sistema web</option>
+                      <option value="other">Otro servicio</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <!-- Mensaje -->
+                <div>
+                  <label class="block text-gray-700 text-sm font-medium mb-2">Cuéntanos sobre tu proyecto</label>
+                  <textarea 
+                    rows="4"
+                    placeholder="¿Qué objetivos tienes? ¿Cuál es tu visión?"
+                    v-model="formData.message"
+                    required
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none placeholder-gray-400"
+                  ></textarea>
+                </div>
               </div>
               
-              <form @submit.prevent="submitForm" class="space-y-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div class="group">
-                    <label class="block text-gray-700 text-sm font-semibold uppercase mb-3 tracking-wider group-focus-within:text-emerald-600 transition-colors">Nombre completo</label>
-                    <input type="text" placeholder="Ej. Juan Pérez" 
-                           v-model="formData.name"
-                           class="w-full bg-gray-50 border-2 border-gray-200 p-4 text-gray-900 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all placeholder-gray-400">
-                  </div>
-
-                  <div class="group">
-                    <label class="block text-gray-700 text-sm font-semibold uppercase mb-3 tracking-wider group-focus-within:text-emerald-600 transition-colors">Correo electrónico</label>
-                    <input type="email" placeholder="correo@ejemplo.com"
-                           v-model="formData.email"
-                           class="w-full bg-gray-50 border-2 border-gray-200 p-4 text-gray-900 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all placeholder-gray-400">
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div class="group">
-                    <label class="block text-gray-700 text-sm font-semibold uppercase mb-3 tracking-wider group-focus-within:text-emerald-600 transition-colors">Nombre del negocio</label>
-                    <input type="text" placeholder="Empresa o marca"
-                           v-model="formData.business"
-                           class="w-full bg-gray-50 border-2 border-gray-200 p-4 text-gray-900 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all placeholder-gray-400">
-                  </div>
-
-                  <div class="group">
-                    <label class="block text-gray-700 text-sm font-semibold uppercase mb-3 tracking-wider group-focus-within:text-emerald-600 transition-colors">Tipo de proyecto</label>
-                    <div class="relative">
-                      <select v-model="formData.projectType"
-                              class="w-full bg-gray-50 border-2 border-gray-200 p-4 text-gray-900 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all appearance-none cursor-pointer">
-                        <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="corporate">Sitio web corporativo</option>
-                        <option value="landing">Página de destino (Landing Page)</option>
-                        <option value="system">Sistema web (CRUD/Admin)</option>
-                        <option value="other">Otro servicio técnico</option>
-                      </select>
-                      <span class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">▼</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="group">
-                  <label class="block text-gray-700 text-sm font-semibold uppercase mb-3 tracking-wider group-focus-within:text-emerald-600 transition-colors">Mensaje</label>
-                  <textarea rows="5" placeholder="¿Qué objetivos quieres alcanzar? ¿Cuál es tu visión para este proyecto?"
-                            v-model="formData.message"
-                            class="w-full bg-gray-50 border-2 border-gray-200 p-4 text-gray-900 rounded-xl focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all resize-none placeholder-gray-400"></textarea>
-                </div>
-
-                <button type="submit" 
-                        :disabled="loading"
-                        :class="['w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 inline-flex items-center justify-center gap-2',
-                                 loading ? 'opacity-70 cursor-not-allowed' : 'hover:scale-[1.02]']">
+              <!-- Botón de envío -->
+              <div class="pt-4">
+                <button 
+                  type="submit"
+                  :disabled="loading"
+                  :class="['w-full bg-emerald-600 text-white py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors duration-300 flex items-center justify-center gap-2',
+                           loading ? 'opacity-70 cursor-not-allowed' : '']"
+                >
                   <span v-if="loading">
-                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                     Enviando...
                   </span>
                   <span v-else class="flex items-center gap-2">
-                    Enviar mensaje
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    Enviar solicitud
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                   </span>
                 </button>
-              </form>
+                
+                <!-- Nota de privacidad -->
+                <p class="mt-4 text-center text-gray-500 text-xs">
+                  Tus datos están seguros. No compartimos información con terceros.
+                </p>
+              </div>
+            </form>
+            <!-- Mensaje de éxito -->
+<Transition
+  enter-active-class="transition duration-300 ease-out"
+  enter-from-class="opacity-0 translate-y-2"
+  enter-to-class="opacity-100 translate-y-0"
+  leave-active-class="transition duration-200 ease-in"
+  leave-from-class="opacity-100 translate-y-0"
+  leave-to-class="opacity-0 translate-y-2"
+>
+  <div v-if="showSuccessMessage" class="fixed top-6 right-6 z-50 max-w-sm">
+    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 shadow-lg">
+      <div class="flex items-start gap-3">
+        <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-emerald-800 font-medium">¡Mensaje enviado con éxito!</p>
+          <p class="text-emerald-600 text-sm mt-1">Te contactaremos en menos de 48 horas.</p>
+        </div>
+        <button @click="closeSuccessMessage" class="text-emerald-400 hover:text-emerald-600 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</Transition>
 
-              <p class="mt-10 text-xs text-gray-500 text-center">
-                <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                </svg>
-                Privacidad garantizada. Datos procesados únicamente para fines de consultoría técnica.
-              </p>
-            </div>
+<!-- Mensaje de error -->
+<Transition
+  enter-active-class="transition duration-300 ease-out"
+  enter-from-class="opacity-0 translate-y-2"
+  enter-to-class="opacity-100 translate-y-0"
+  leave-active-class="transition duration-200 ease-in"
+  leave-from-class="opacity-100 translate-y-0"
+  leave-to-class="opacity-0 translate-y-2"
+>
+  <div v-if="submitError" class="fixed top-6 right-6 z-50 max-w-sm">
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4 shadow-lg">
+      <div class="flex items-start gap-3">
+        <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-red-800 font-medium">Error al enviar</p>
+          <p class="text-red-600 text-sm mt-1">{{ submitError }}</p>
+        </div>
+        <button @click="clearError" class="text-red-400 hover:text-red-600 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</Transition>
           </div>
         </div>
-
-        <!-- Información lateral -->
+        
+        <!-- Información lateral (sin cambios) -->
         <div class="lg:col-span-5 space-y-12">
-          
           <!-- Proceso -->
           <div class="relative">
             <h2 class="text-gray-900 text-2xl font-bold mb-8 tracking-tight">¿Qué pasa después?</h2>
@@ -140,11 +220,10 @@
               </div>
             </div>
           </div>
-
-          <!-- Canales directos con imágenes -->
+          
+          <!-- Canales directos -->
           <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-200 space-y-8 shadow-lg">
             <h3 class="text-emerald-600 font-bold uppercase text-sm tracking-wider">Canales Directos</h3>
-            
             <div class="space-y-6">
               <a v-for="link in socialLinks" :key="link.label" :href="link.url" target="_blank" class="flex items-center gap-5 group p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300">
                 <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
@@ -160,85 +239,91 @@
               </a>
             </div>
           </div>
-
-          <!-- Compromiso con imagen -->
-          <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-3xl relative overflow-hidden">
-            <!-- Imagen de fondo compromiso -->
-            <div class="absolute inset-0 opacity-10">
-              <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-            </div>
-            
-            <div class="relative z-10 space-y-6">
-              <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shadow-emerald-500/30">
-                🤝
-              </div>
-              <h3 class="text-white text-xl font-bold">Compromiso DACAV</h3>
-              <p class="text-gray-300 leading-relaxed">
-                Estás a un paso de trabajar con un desarrollador que prioriza la <span class="text-emerald-400 font-semibold">escalabilidad</span> y el <span class="text-emerald-400 font-semibold">rendimiento</span>. Sin intermediarios, sin sorpresas.
-              </p>
-              
-              <div class="flex items-center gap-4 pt-4">
-                <div class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">✓</div>
-                <span class="text-gray-300 text-sm">Respuesta en 24 horas</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">✓</div>
-                <span class="text-gray-300 text-sm">Análisis técnico detallado</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Mapa de ubicación -->
-    <section class="py-20 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-gray-900 text-3xl font-bold tracking-tight mb-4">Ubicación y Alcance</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">Trabajamos de forma remota con alcance internacional</p>
-        </div>
+        <!-- Sección de Ubicación - Rediseña -->
+    <section class="py-20 px-4 sm:px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
         
-        <div class="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden">
-          <!-- Mapa visual con imagen -->
-          <div class="relative h-64 bg-gradient-to-br from-emerald-50 to-cyan-50 overflow-hidden">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534531173927-aeb928d54385?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
-            
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="text-center space-y-4 relative z-10">
-                <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-2xl">
-                  <svg class="w-10 h-10 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-gray-900 font-bold text-lg">Colombia</p>
-                  <p class="text-gray-600">Base operativa • Trabajo remoto</p>
-                </div>
-              </div>
-            </div>
+        <!-- Encabezado simple -->
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-2 px-5 py-2 bg-emerald-50 rounded-full text-emerald-700 text-sm font-medium mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            Alcance Global
           </div>
-          
-          <div class="p-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="text-center">
-                <div class="text-emerald-600 text-2xl font-bold">🌎</div>
-                <h4 class="text-gray-900 font-bold mt-2">Alcance Global</h4>
-                <p class="text-gray-600 text-sm mt-2">Proyectos internacionales vía remota</p>
-              </div>
-              <div class="text-center">
-                <div class="text-emerald-600 text-2xl font-bold">⏰</div>
-                <h4 class="text-gray-900 font-bold mt-2">Horario Flexible</h4>
-                <p class="text-gray-600 text-sm mt-2">Adaptado a tu zona horaria</p>
-              </div>
-              <div class="text-center">
-                <div class="text-emerald-600 text-2xl font-bold">💬</div>
-                <h4 class="text-gray-900 font-bold mt-2">Comunicación Clara</h4>
-                <p class="text-gray-600 text-sm mt-2">Reuniones virtuales cuando sea necesario</p>
-              </div>
-            </div>
-          </div>
+          <h2 class="text-gray-900 text-3xl font-bold tracking-tight mb-4">Ubicación y Cobertura</h2>
+          <p class="text-gray-600 max-w-xl mx-auto">Trabajamos completamente de forma remota, conectando con clientes en cualquier parte del mundo</p>
         </div>
+
+        <!-- Card principal -->
+        <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-8 md:p-10 shadow-lg">
+          
+          <!-- Información de ubicación -->
+          <div class="flex flex-col md:flex-row items-center gap-8 mb-10">
+            <!-- Icono de ubicación -->
+            <div class="w-24 h-24 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+              </svg>
+            </div>
+            
+            <!-- Detalles de ubicación -->
+            <div class="text-center md:text-left">
+              <h3 class="text-gray-900 text-2xl font-bold mb-3">Sin importar tu ubicación, construimos juntos</h3>
+              <p class="text-gray-600 mb-4">Nuestra base operativa está en Colombia, pero nuestro alcance es completamente global gracias al trabajo remoto.</p>
+              <div class="inline-flex items-center gap-2 text-emerald-600 font-medium">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                </svg>
+                Proyectos internacionales vía remota
+              </div>
+            </div>
+          </div>
+
+          <!-- Ventajas del trabajo remoto -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Ventaja 1 -->
+            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:border-emerald-200 transition-colors">
+              <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 text-xl mb-4">
+                🌎
+              </div>
+              <h4 class="text-gray-900 font-bold mb-2">Sin Fronteras</h4>
+              <p class="text-gray-500 text-sm">Trabajamos con clientes en cualquier país, sin limitaciones geográficas.</p>
+            </div>
+
+            <!-- Ventaja 2 -->
+            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:border-emerald-200 transition-colors">
+              <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 text-xl mb-4">
+                ⏰
+              </div>
+              <h4 class="text-gray-900 font-bold mb-2">Horario Flexible</h4>
+              <p class="text-gray-500 text-sm">Nos adaptamos a tu zona horaria para coordinaciones eficientes.</p>
+            </div>
+
+            <!-- Ventaja 3 -->
+            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:border-emerald-200 transition-colors">
+              <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 text-xl mb-4">
+                💬
+              </div>
+              <h4 class="text-gray-900 font-bold mb-2">Comunicación Efectiva</h4>
+              <p class="text-gray-500 text-sm">Herramientas modernas para comunicación clara y constante.</p>
+            </div>
+          </div>
+
+          <!-- Nota adicional -->
+          <div class="mt-10 pt-8 border-t border-gray-100 text-center">
+            <p class="text-gray-500 text-sm">
+              <span class="font-medium text-gray-700">Modalidad 100% remota</span> • Sin desplazamientos • Sin costos adicionales por ubicación
+            </p>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
@@ -248,7 +333,13 @@
 <script setup>
 import { ref } from 'vue'
 
+// Estados del formulario
 const loading = ref(false)
+const submitSuccess = ref(false)
+const submitError = ref(null)
+const showSuccessMessage = ref(false)
+
+// Datos del formulario
 const formData = ref({
   name: '',
   email: '',
@@ -257,41 +348,121 @@ const formData = ref({
   message: ''
 })
 
+// Datos estáticos
 const steps = [
-  'Revisamos tu requerimiento en menos de 24 horas.',
+  'Revisamos tu requerimiento en menos de 48 horas.',
   'Analizamos la viabilidad técnica y objetivos.',
   'Agendamos una breve sesión de consultoría inicial.',
   'Iniciamos el desarrollo bajo un cronograma preciso.'
 ]
 
 const socialLinks = [
-  { label: 'Email Estratégico', value: 'dacav.contacto@gmail.com', icon: '✉️', url: 'mailto:dacav.contacto@gmail.com' },
+  { label: 'Email Estratégico', value: 'dsantiagocanvar@gmail.com', icon: '✉️', url: 'mailto:dacav.contacto@gmail.com' },
   { label: 'WhatsApp Directo', value: '+57 319 383 1573', icon: '💬', url: 'https://wa.me/573193831573' },
   { label: 'GitHub & Repos', value: 'github.com/DavidCantor', icon: '👨‍💻', url: 'https://github.com/DavidCantor' }
 ]
 
+// Método para enviar formulario
 const submitForm = async () => {
+  // Resetear estados previos
+  submitSuccess.value = false
+  submitError.value = null
+  showSuccessMessage.value = false
+
+  // 1. Validación básica
   if (!formData.value.name || !formData.value.email || !formData.value.message) {
-    alert('Por favor completa los campos requeridos')
+    submitError.value = 'Por favor completa los campos requeridos: nombre, email y mensaje'
     return
   }
-  
+
+  // Validar formato de email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(formData.value.email)) {
+    submitError.value = 'Por favor ingresa un email válido'
+    return
+  }
+
+  // Validar longitud mínima del mensaje
+  if (formData.value.message.trim().length < 10) {
+    submitError.value = 'Por favor escribe un mensaje más detallado (mínimo 10 caracteres)'
+    return
+  }
+
+  // 2. Mostrar estado de carga
   loading.value = true
-  
-  // Simular envío del formulario
-  setTimeout(() => {
-    loading.value = false
-    alert('¡Mensaje enviado! Te contactaremos en menos de 24 horas.')
-    
-    // Resetear formulario
-    formData.value = {
-      name: '',
-      email: '',
-      business: '',
-      projectType: '',
-      message: ''
+
+  try {
+    // 3. Enviar datos a Formspree
+    const response = await fetch('https://formspree.io/f/xdaoygld', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.value.name,
+        email: formData.value.email,
+        business: formData.value.business || 'No especificado',
+        projectType: formData.value.projectType || 'No especificado',
+        message: formData.value.message,
+        _subject: `Nuevo contacto DACAV - ${formData.value.business || formData.value.name}`,
+        _replyto: formData.value.email
+      })
+    })
+
+    // 4. Manejar respuesta
+    if (response.ok) {
+      // Éxito
+      submitSuccess.value = true
+      showSuccessMessage.value = true
+      
+      // Resetear formulario
+      formData.value = {
+        name: '',
+        email: '',
+        business: '',
+        projectType: '',
+        message: ''
+      }
+      
+      // Ocultar mensaje de éxito después de 5 segundos
+      setTimeout(() => {
+        showSuccessMessage.value = false
+      }, 5000)
+      
+    } else {
+      // Error del servidor
+      const errorData = await response.json()
+      throw new Error(errorData.error || 'Error al enviar el formulario')
     }
-  }, 1500)
+
+  } catch (error) {
+    // 5. Manejar errores
+    console.error('Error enviando formulario:', error)
+    
+    // Determinar tipo de error
+    if (error.message.includes('Failed to fetch')) {
+      submitError.value = 'Error de conexión. Por favor verifica tu internet e intenta nuevamente.'
+    } else if (error.message.includes('rate limit') || error.message.includes('too many requests')) {
+      submitError.value = 'Demasiados intentos. Por favor espera unos minutos antes de intentar nuevamente.'
+    } else {
+      submitError.value = 'Hubo un error al enviar tu mensaje. Por favor intenta nuevamente o contáctanos directamente por email.'
+    }
+    
+  } finally {
+    // 6. Quitar estado de carga (siempre se ejecuta)
+    loading.value = false
+  }
+}
+
+// Método para limpiar errores
+const clearError = () => {
+  submitError.value = null
+}
+
+// Método para cerrar mensaje de éxito manualmente
+const closeSuccessMessage = () => {
+  showSuccessMessage.value = false
 }
 </script>
 
