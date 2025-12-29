@@ -1,9 +1,9 @@
 <template>
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100 px-4 sm:px-6 py-3">
+  <nav aria-label="Navegación principal" class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-100 px-4 sm:px-6 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Logo -->
-      <NuxtLink to="/" class="flex items-center gap-3 group">
+      <NuxtLink to="/" aria-label="Inicio - DACAV" class="flex items-center gap-3 group">
         <div class="bg-gradient-to-br from-emerald-500 to-cyan-500 text-white w-10 h-10 flex items-center justify-center rounded-xl font-black text-xl shadow-md shadow-emerald-500/20">
           D
         </div>
@@ -42,7 +42,7 @@
       </div>
 
       <!-- Botón Menú Móvil -->
-      <button @click="isMenuOpen = !isMenuOpen" class="md:hidden p-2">
+      <button @click="isMenuOpen = !isMenuOpen" :aria-expanded="isMenuOpen" aria-controls="mobile-menu" aria-label="Abrir menú" class="md:hidden p-2">
         <div class="w-6 h-5 relative flex flex-col justify-between">
           <span :class="['w-full h-0.5 bg-gray-700 transition-all duration-300', isMenuOpen ? 'rotate-45 translate-y-2' : '']"></span>
           <span :class="['w-full h-0.5 bg-gray-700 transition-all duration-300', isMenuOpen ? 'opacity-0' : '']"></span>
@@ -60,7 +60,7 @@
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <div v-if="isMenuOpen" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg">
+      <div v-if="isMenuOpen" id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg">
         <div class="px-6 py-6 flex flex-col gap-1">
           <NuxtLink 
             v-for="item in navLinks" 
