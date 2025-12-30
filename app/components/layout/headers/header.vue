@@ -2,15 +2,24 @@
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-4 sm:px-6 py-3 transition-all duration-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <NuxtLink to="/" class="flex items-center gap-3 group transition-transform duration-200 active:scale-95">
-        <div class="bg-gradient-to-br from-emerald-500 to-cyan-500 text-white w-10 h-10 flex items-center justify-center rounded-xl font-black text-xl shadow-lg shadow-emerald-500/20  transition-transform">
-          D
-        </div>
-        <div class="flex flex-col">
-          <span class="text-gray-900 font-black text-xl tracking-tight leading-none group-hover:text-emerald-600 transition-colors">DACAV</span>
-          <span class="text-gray-400 text-[9px] font-bold tracking-[0.2em] uppercase mt-0.5">Web Studio</span>
-        </div>
-      </NuxtLink>
+<NuxtLink to="/" class="flex items-center gap-4 group transition-transform duration-200 active:scale-95">
+  <div class="w-16 h-16 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 -mt-1 transform -translate-y-[2px]">
+    <img 
+      src="/dacav-logo.png" 
+      alt="Logo DACAV" 
+      class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-black text-2xl tracking-tight leading-none transition-colors">
+      DACAV
+    </span>
+    <span class="text-gray-400 text-[10px] font-bold tracking-[0.25em] uppercase mt-1">
+      Web Studio
+    </span>
+  </div>
+</NuxtLink>
 
       <div class="hidden md:flex items-center gap-2">
         <NuxtLink 
