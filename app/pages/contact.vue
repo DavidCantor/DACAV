@@ -30,7 +30,6 @@
 <section class="relative py-20 px-4 sm:px-6 overflow-hidden">
   <div class="absolute inset-0 z-0">
     <img 
-      src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
       alt="Background" 
       class="w-full h-full object-cover"
     />
@@ -44,7 +43,7 @@
         
         <div class="text-center mb-10">
           <div class="inline-flex items-center justify-center w-20 h-20 bg-gray-900 rounded-2xl mb-6 mx-auto border border-white/10 shadow-xl group">
-            <img src="/dacav-logo.png" alt="Logo DACAV" class="w-full h-full object-cover p-1 transition-transform group-hover:scale-110" />
+            <img src="/dacav-logo.png" alt="Logo DACAV" class="w-full h-full object-cover p-1" />
           </div>
           <h2 class="text-white text-3xl font-bold mb-3">Inicia tu proyecto</h2>
           <p class="text-gray-400">Completa todos los campos y te responderemos pronto</p>
