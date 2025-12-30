@@ -3,57 +3,71 @@
 
     <!-- Hero Section con imagen de fondo -->
     <section class="relative min-h-screen flex items-center px-4 sm:px-6 pt-16 overflow-hidden">
-      <!-- Imagen de fondo con overlay -->
-      <div class="absolute inset-0 z-0">
-        <!-- Imagen de fondo relacionada con desarrollo web -->
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-emerald-900/85"></div>
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-emerald-900/85"></div>
+    <div
+      class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-40">
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <div class="space-y-8 text-center lg:text-left order-2 lg:order-1">
         <div
-          class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-40">
+          class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold uppercase tracking-wider">
+          <span class="relative flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+          Estudio de Desarrollo Web
+        </div>
+
+        <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight">
+          Creamos páginas <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">profesionales.</span>
+        </h1>
+
+        <p class="text-white/90 text-xl md:text-2xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+          Diseñamos y desarrollamos sitios web claros, elegantes y optimizados para que tus clientes <span
+            class="text-white font-semibold">confíen en ti y te contacten.</span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start pt-6">
+          <NuxtLink to="/contact"
+            class="group relative bg-gradient-to-r from-emerald-600 to-cyan-600 text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:shadow-2xl hover:shadow-emerald-500/30 transform hover:-translate-y-1 text-center">
+            <span class="relative z-10">Solicitar cotización</span>
+            <span
+              class="absolute right-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-2 transition-all duration-300">→</span>
+          </NuxtLink>
+          <NuxtLink to="/projects"
+            class="px-10 py-5 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition-all transform hover:-translate-y-1 text-center">
+            Ver proyectos
+          </NuxtLink>
         </div>
       </div>
 
-      <div class="max-w-7xl mx-auto w-full relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-          <div class="space-y-8 text-center lg:text-left">
-            <div
-              class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold uppercase tracking-wider">
-              <span class="relative flex h-3 w-3">
-                <span
-                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-              </span>
-              Estudio de Desarrollo Web
-            </div>
-
-            <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight">
-              Creamos páginas <br />
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">profesionales.</span>
-            </h1>
-
-            <p class="text-white/90 text-xl md:text-2xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              Diseñamos y desarrollamos sitios web claros, elegantes y optimizados para que tus clientes <span
-                class="text-white font-semibold">confíen en ti y te contacten.</span>
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start pt-6">
-              <NuxtLink to="/contact"
-                class="group relative bg-gradient-to-r from-emerald-600 to-cyan-600 text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:shadow-2xl hover:shadow-emerald-500/30 transform hover:-translate-y-1">
-                <span class="relative z-10">Solicitar cotización</span>
-                <span
-                  class="absolute right-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-2 transition-all duration-300">→</span>
-              </NuxtLink>
-              <NuxtLink to="/projects"
-                class="px-10 py-5 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition-all transform hover:-translate-y-1 inline-block">
-                Ver proyectos
-              </NuxtLink>
-            </div>
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+        <div class="relative group">
+          <div class="absolute -inset-4 bg-emerald-500/20 rounded-[4rem] blur-3xl group-hover:bg-emerald-500/30 transition duration-700"></div>
+          
+          <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] bg-white/5 backdrop-blur-md rounded-[4rem] border border-white/10 p-4 shadow-2xl overflow-hidden flex items-center justify-center transform lg:rotate-3 hover:rotate-0 transition-all duration-700">
+            <img 
+              src="/dacav-logo.png" 
+              alt="DACAV Logo" 
+              class="w-full h-full object-cover rounded-[3.5rem] transform transition-transform duration-1000 group-hover:scale-110"
+            />
           </div>
+          
+      
         </div>
       </div>
 
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Servicios Section -->
     <section class="py-24 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
@@ -215,34 +229,53 @@
       </div>
     </section>
 
-    <!-- Acerca Section -->
-    <section class="py-24 px-4 sm:px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div>
-            <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none mb-8">Acerca de <br />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">DACAV.</span>
-            </h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mb-12"></div>
+<section class="py-24 px-4 sm:px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
+  <div class="absolute top-1/2 left-0 w-96 h-96 bg-emerald-500/10 blur-[150px] rounded-full -translate-y-1/2 -translate-x-1/2"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+        <div class="relative group flex-shrink-0">
+          <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-700"></div>
+          <div class="relative w-48 h-48 lg:w-56 lg:h-56 bg-gray-900/50 rounded-[2.5rem] border border-white/10 p-2 backdrop-blur-sm shadow-2xl overflow-hidden">
+            <img 
+              src="/dacav-logo.png" 
+              alt="Logo DACAV" 
+              class="w-full h-full object-cover rounded-[2rem] transform transition-transform duration-700 group-hover:scale-105" 
+            />
           </div>
-          <div class="space-y-12">
-            <p class="text-xl lg:text-2xl text-white/80 font-light leading-relaxed">
-              DACAV es un estudio liderado por un desarrollador junior con enfoque fuerte en frontend moderno con <span
-                class="text-white font-bold">Nuxt</span> y bases sólidas en backend.
-            </p>
-            <div class="grid grid-cols-1 xs:grid-cols-3 gap-8">
-              <div
-                v-for="stat in [{ l: 'Atención', v: 'Personalizada' }, { l: 'Proyectos', v: 'Bien pensados' }, { l: 'Enfoque', v: 'Calidad' }]"
-                :key="stat.l"
-                class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 min-h-[140px] flex flex-col justify-center">
-                <div class="text-emerald-400 text-xs font-black uppercase tracking-widest mb-3">{{ stat.l }}</div>
-                <div class="text-2xl font-bold leading-tight break-words">{{ stat.v }}</div>
-              </div>
-            </div>
+        </div>
+
+        <div class="flex flex-col justify-center">
+          <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none mb-8 text-center md:text-left">
+            Acerca de <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">DACAV.</span>
+          </h2>
+          <div class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mb-4 self-center md:self-start"></div>
+        </div>
+      </div>
+
+      <div class="space-y-12">
+        <p class="text-xl lg:text-2xl text-white/80 font-light leading-relaxed">
+          DACAV es un estudio liderado por un desarrollador junior con enfoque fuerte en frontend moderno con 
+          <span class="text-white font-bold">Nuxt</span> y bases sólidas en backend.
+        </p>
+        
+        <div class="grid grid-cols-1 xs:grid-cols-3 gap-8">
+          <div
+            v-for="stat in [{ l: 'Atención', v: 'Personalizada' }, { l: 'Proyectos', v: 'Bien pensados' }, { l: 'Enfoque', v: 'Calidad' }]"
+            :key="stat.l"
+            class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 min-h-[140px] flex flex-col justify-center transition-all duration-300 hover:bg-white/10 hover:border-emerald-500/30">
+            <div class="text-emerald-400 text-xs font-black uppercase tracking-widest mb-3">{{ stat.l }}</div>
+            <div class="text-2xl font-bold leading-tight break-words">{{ stat.v }}</div>
           </div>
         </div>
       </div>
-    </section>
+      
+    </div>
+  </div>
+</section>
 
     <!-- Contacto Section -->
     <section class="py-32 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">

@@ -27,221 +27,202 @@
       </div>
     </section>
 
-        <!-- Formulario - Rediseñado -->
-    <section class="py-20 px-4 sm:px-6">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<section class="relative py-20 px-4 sm:px-6 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+      alt="Background" 
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gray-950/90 backdrop-blur-2xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start relative z-10">
+    
+    <div class="lg:col-span-7">
+      <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl p-8 md:p-10">
         
-        <!-- Formulario simplificado -->
-        <div class="lg:col-span-7">
-          <div class="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 md:p-10">
-            <!-- Encabezado más limpio -->
-            <div class="text-center mb-10">
-              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl mb-6 mx-auto shadow-lg shadow-emerald-500/30">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-gray-900 rounded-2xl mb-6 mx-auto border border-white/10 shadow-xl group">
+            <img src="/dacav-logo.png" alt="Logo DACAV" class="w-full h-full object-cover p-1 transition-transform group-hover:scale-110" />
+          </div>
+          <h2 class="text-white text-3xl font-bold mb-3">Inicia tu proyecto</h2>
+          <p class="text-gray-400">Completa todos los campos y te responderemos pronto</p>
+        </div>
+        
+        <form @submit.prevent="submitForm" class="space-y-6">
+          <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-white/80 text-sm font-medium mb-2">Nombre completo</label>
+                <input 
+                  type="text" 
+                  placeholder="Tu nombre aquí"
+                  v-model="formData.name"
+                  required
+                  class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-white/30"
+                />
               </div>
-              <h2 class="text-gray-900 text-2xl font-bold mb-3">Inicia tu proyecto</h2>
-              <p class="text-gray-600">Completa este formulario y te contactaremos en menos de 24 horas</p>
+              <div>
+                <label class="block text-white/80 text-sm font-medium mb-2">Correo electrónico</label>
+                <input 
+                  type="email" 
+                  placeholder="tu@email.com"
+                  v-model="formData.email"
+                  required
+                  class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-white/30"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-white/80 text-sm font-medium mb-2">Nombre del negocio</label>
+                <input 
+                  type="text" 
+                  placeholder="Empresa o marca"
+                  v-model="formData.business"
+                  class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-white/30"
+                />
+              </div>
+              <div>
+                <label class="block text-white/80 text-sm font-medium mb-2">Tipo de proyecto</label>
+                <select 
+                  v-model="formData.projectType"
+                  class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-emerald-500 transition-all appearance-none cursor-pointer"
+                >
+                  <option value="" disabled class="bg-gray-900 text-white">¿Qué necesitas?</option>
+                  <option value="corporate" class="bg-gray-900 text-white">Sitio web corporativo</option>
+                  <option value="landing" class="bg-gray-900 text-white">Landing page</option>
+                  <option value="system" class="bg-gray-900 text-white">Sistema web</option>
+                  <option value="other" class="bg-gray-900 text-white">Otro servicio</option>
+                </select>
+              </div>
             </div>
             
-            <form @submit.prevent="submitForm" class="space-y-6" >
-              <!-- Campos del formulario -->
-              <div class="space-y-6">
-                <!-- Nombre y Email -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label class="block text-gray-700 text-sm font-medium mb-2">Nombre completo</label>
-                    <input 
-                      type="text" 
-                      placeholder="Tu nombre"
-                      v-model="formData.name"
-                      required
-                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors placeholder-gray-400"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label class="block text-gray-700 text-sm font-medium mb-2">Correo electrónico</label>
-                    <input 
-                      type="email" 
-                      placeholder="tu@email.com"
-                      v-model="formData.email"
-                      required
-                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors placeholder-gray-400"
-                    />
-                  </div>
-                </div>
-                
-                <!-- Negocio y Tipo de Proyecto -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label class="block text-gray-700 text-sm font-medium mb-2">Nombre del negocio</label>
-                    <input 
-                      type="text" 
-                      placeholder="Empresa o marca"
-                      v-model="formData.business"
-                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors placeholder-gray-400"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label class="block text-gray-700 text-sm font-medium mb-2">Tipo de proyecto</label>
-                    <select 
-                      v-model="formData.projectType"
-                      class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors appearance-none"
-                    >
-                      <option value="" disabled selected>¿Qué necesitas?</option>
-                      <option value="corporate">Sitio web corporativo</option>
-                      <option value="landing">Landing page</option>
-                      <option value="system">Sistema web</option>
-                      <option value="other">Otro servicio</option>
-                    </select>
-                  </div>
-                </div>
-                
-                <!-- Mensaje -->
-                <div>
-                  <label class="block text-gray-700 text-sm font-medium mb-2">Cuéntanos sobre tu proyecto</label>
-                  <textarea 
-                    rows="4"
-                    placeholder="¿Qué objetivos tienes? ¿Cuál es tu visión?"
-                    v-model="formData.message"
-                    required
-                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none placeholder-gray-400"
-                  ></textarea>
-                </div>
-              </div>
-              
-              <!-- Botón de envío -->
-              <div class="pt-4">
-                <button 
-                  type="submit"
-                  :disabled="loading"
-                  :class="['w-full bg-emerald-600 text-white py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors duration-300 flex items-center justify-center gap-2',
-                           loading ? 'opacity-70 cursor-not-allowed' : '']"
-                >
-                  <span v-if="loading">
-                    <svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Enviando...
-                  </span>
-                  <span v-else class="flex items-center gap-2">
-                    Enviar solicitud
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                  </span>
-                </button>
-                
-                <!-- Nota de privacidad -->
-                <p class="mt-4 text-center text-gray-500 text-xs">
-                  Tus datos están seguros. No compartimos información con terceros.
-                </p>
-              </div>
-            </form>
-            <!-- Mensaje de éxito -->
-<Transition
-  enter-active-class="transition duration-300 ease-out"
-  enter-from-class="opacity-0 translate-y-2"
-  enter-to-class="opacity-100 translate-y-0"
-  leave-active-class="transition duration-200 ease-in"
-  leave-from-class="opacity-100 translate-y-0"
-  leave-to-class="opacity-0 translate-y-2"
->
-  <div v-if="showSuccessMessage" class="fixed top-6 right-6 z-50 max-w-sm">
-    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 shadow-lg">
-      <div class="flex items-start gap-3">
-        <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-          <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-        </div>
-        <div class="flex-1">
-          <p class="text-emerald-800 font-medium">¡Mensaje enviado con éxito!</p>
-          <p class="text-emerald-600 text-sm mt-1">Te contactaremos en menos de 48 horas.</p>
-        </div>
-        <button @click="closeSuccessMessage" class="text-emerald-400 hover:text-emerald-600 transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</Transition>
-
-<!-- Mensaje de error -->
-<Transition
-  enter-active-class="transition duration-300 ease-out"
-  enter-from-class="opacity-0 translate-y-2"
-  enter-to-class="opacity-100 translate-y-0"
-  leave-active-class="transition duration-200 ease-in"
-  leave-from-class="opacity-100 translate-y-0"
-  leave-to-class="opacity-0 translate-y-2"
->
-  <div v-if="submitError" class="fixed top-6 right-6 z-50 max-w-sm">
-    <div class="bg-red-50 border border-red-200 rounded-xl p-4 shadow-lg">
-      <div class="flex items-start gap-3">
-        <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-          <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </div>
-        <div class="flex-1">
-          <p class="text-red-800 font-medium">Error al enviar</p>
-          <p class="text-red-600 text-sm mt-1">{{ submitError }}</p>
-        </div>
-        <button @click="clearError" class="text-red-400 hover:text-red-600 transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</Transition>
-          </div>
-        </div>
-        
-        <!-- Información lateral (sin cambios) -->
-        <div class="lg:col-span-5 space-y-12">
-          <!-- Proceso -->
-          <div class="relative">
-            <h2 class="text-gray-900 text-2xl font-bold mb-8 tracking-tight">¿Qué pasa después?</h2>
-            <div class="space-y-8 relative before:absolute before:left-4 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-emerald-200 before:to-cyan-200">
-              <div v-for="(item, index) in steps" :key="index" class="flex gap-6 items-start relative group">
-                <span class="bg-white border-2 border-emerald-500 text-emerald-600 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 z-10 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-md">
-                  {{ index + 1 }}
-                </span>
-                <p class="text-gray-600 text-base leading-relaxed pt-1 group-hover:text-gray-900 transition-colors">{{ item }}</p>
-              </div>
+            <div>
+              <label class="block text-white/80 text-sm font-medium mb-2">Cuéntanos sobre tu proyecto</label>
+              <textarea 
+                rows="4"
+                placeholder="¿Qué objetivos tienes? ¿Cuál es tu visión?"
+                v-model="formData.message"
+                required
+                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-emerald-500 transition-all resize-none placeholder:text-white/30"
+              ></textarea>
             </div>
           </div>
           
-          <!-- Canales directos -->
-          <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-200 space-y-8 shadow-lg">
-            <h3 class="text-emerald-600 font-bold uppercase text-sm tracking-wider">Canales Directos</h3>
-            <div class="space-y-6">
-              <a v-for="link in socialLinks" :key="link.label" :href="link.url" target="_blank" class="flex items-center gap-5 group p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300">
-                <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
-                  {{ link.icon }}
-                </div>
-                <div class="flex-1">
-                  <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">{{ link.label }}</p>
-                  <p class="text-gray-900 font-semibold group-hover:text-emerald-600 transition-colors break-all">{{ link.value }}</p>
-                </div>
-                <svg class="w-5 h-5 text-gray-400 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </a>
-            </div>
+          <div class="pt-4 text-center">
+            <button 
+              type="submit"
+              :disabled="loading"
+              class="w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] transition-all transform hover:-translate-y-0.5 disabled:opacity-50 flex items-center justify-center gap-3"
+            >
+              <svg v-if="loading" class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span>{{ loading ? 'Enviando...' : 'Enviar solicitud' }}</span>
+            </button>
+            <p class="mt-4 text-white/40 text-xs text-center">Tus datos están seguros bajo la calidad de DACAV.</p>
+          </div>
+        </form>
+
+        <Teleport to="body">
+  <Transition
+    enter-active-class="transition duration-500 ease-out"
+    enter-from-class="opacity-0 translate-y-10"
+    enter-to-class="opacity-100 translate-y-0"
+    leave-active-class="transition duration-300 ease-in"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+  >
+    <div v-if="showSuccessMessage" class="fixed bottom-10 right-4 sm:right-10 z-[100] max-w-sm w-full px-4">
+      <div class="bg-emerald-600 rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex items-start gap-4 border-2 border-emerald-400">
+        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-white font-bold text-lg">¡Enviado con éxito!</p>
+          <p class="text-emerald-50 text-sm">Revisaremos tu propuesta en breve.</p>
+        </div>
+        <button @click="closeSuccessMessage" class="text-white/60 hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </Transition>
+
+  <Transition
+    enter-active-class="transition duration-500 ease-out"
+    enter-from-class="opacity-0 translate-y-10"
+    enter-to-class="opacity-100 translate-y-0"
+    leave-active-class="transition duration-300 ease-in"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+  >
+    <div v-if="submitError" class="fixed bottom-10 right-4 sm:right-10 z-[100] max-w-sm w-full px-4">
+      <div class="bg-red-600 rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex items-start gap-4 border-2 border-red-400">
+        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+          <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-white font-bold text-lg">Hubo un problema</p>
+          <p class="text-red-50 text-sm">{{ submitError }}</p>
+        </div>
+        <button @click="clearError" class="text-white/60 hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </Transition>
+</Teleport>
+
+      </div>
+    </div>
+    
+    <div class="lg:col-span-5 space-y-10">
+      <div class="relative">
+        <h2 class="text-white text-2xl font-bold mb-8">¿Qué pasa después?</h2>
+        <div class="space-y-8 relative before:absolute before:left-4 before:top-0 before:bottom-0 before:w-px before:bg-white/10">
+          <div v-for="(item, index) in steps" :key="index" class="flex gap-6 items-start relative group">
+            <span class="bg-gray-900 border border-emerald-500 text-emerald-400 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold z-10 transition-all group-hover:bg-emerald-500 group-hover:text-white">
+              {{ index + 1 }}
+            </span>
+            <p class="text-white/60 pt-1 group-hover:text-white transition-colors leading-relaxed">{{ item }}</p>
           </div>
         </div>
       </div>
-    </section>
+
+      <div class="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 space-y-6 shadow-2xl">
+        <h3 class="text-emerald-400 font-bold uppercase text-xs tracking-[0.2em]">Canales Directos</h3>
+        <div class="space-y-3">
+          <a v-for="link in socialLinks" :key="link.label" :href="link.url" target="_blank" 
+             class="flex items-center gap-5 group p-4 rounded-2xl hover:bg-white/5 transition-all border border-transparent hover:border-white/10">
+            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-emerald-400 text-xl border border-white/5 group-hover:scale-110 transition-transform shadow-inner">
+              {{ link.icon }}
+            </div>
+            <div class="flex-1">
+              <p class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">{{ link.label }}</p>
+              <p class="text-white font-medium group-hover:text-emerald-400 transition-colors break-all">{{ link.value }}</p>
+            </div>
+            <svg class="w-4 h-4 text-gray-600 group-hover:text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         <!-- Sección de Ubicación - Rediseña -->
     <section class="py-20 px-4 sm:px-6 bg-white">

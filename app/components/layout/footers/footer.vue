@@ -1,22 +1,25 @@
 <template>
   <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white pt-20 pb-12 px-4 sm:px-6 relative overflow-hidden">
-    <!-- Elementos decorativos con gradientes -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-      <!-- Sección principal del footer -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
         
-        <!-- Logo y descripción -->
         <div class="lg:col-span-3 space-y-6">
-          <div class="flex items-center gap-3">
-            <div class="bg-gradient-to-br from-emerald-500 to-cyan-500 text-white w-12 h-12 flex items-center justify-center rounded-xl font-black text-xl shadow-lg shadow-emerald-500/30">
-              D
-            </div>
+          <div class="flex items-center gap-4">
+            <div class="w-17 h-17 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 -mt-1 transform -translate-y-[2px]">
+    <img 
+      src="/dacav-logo.png" 
+      alt="Logo DACAV" 
+      class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
+    />
+  </div>
             <div>
-              <span class="font-black text-2xl tracking-tight">DACAV</span>
-              <p class="text-emerald-400 text-[10px] font-bold uppercase tracking-widest mt-1">WEB STUDIO</p>
+              <span class="font-black text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+                DACAV
+              </span>
+              <p class="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mt-1">WEB STUDIO</p>
             </div>
           </div>
           <div class="space-y-4">
@@ -32,7 +35,6 @@
           </div>
         </div>
 
-        <!-- Navegación -->
         <div class="lg:col-span-2">
           <h4 class="text-emerald-400 font-bold uppercase text-xs tracking-widest mb-6 pb-2 border-b border-white/10">Navegación</h4>
           <ul class="space-y-3">
@@ -45,7 +47,6 @@
           </ul>
         </div>
 
-        <!-- Servicios -->
         <div class="lg:col-span-2">
           <h4 class="text-emerald-400 font-bold uppercase text-xs tracking-widest mb-6 pb-2 border-b border-white/10">Servicios</h4>
           <ul class="space-y-3">
@@ -57,7 +58,6 @@
           </ul>
         </div>
 
-        <!-- Contacto -->
         <div class="lg:col-span-2">
           <h4 class="text-emerald-400 font-bold uppercase text-xs tracking-widest mb-6 pb-2 border-b border-white/10">Contacto</h4>
           <div class="space-y-4 text-sm">
@@ -65,7 +65,6 @@
               <span class="block text-emerald-400 mb-1 text-xs font-medium">Email</span>
               <a href="mailto:dsantiagocanvar@gmail.com" 
                  class="text-gray-300 group-hover:text-white transition-colors flex items-center gap-2">
-                
                 dsantiagocanvar@gmail.com
               </a>
             </div>
@@ -91,7 +90,6 @@
           </div>
         </div>
 
-        <!-- Redes Sociales -->
         <div class="lg:col-span-3">
           <h4 class="text-emerald-400 font-bold uppercase text-xs tracking-widest mb-6 pb-2 border-b border-white/10">Conecta con Nosotros</h4>
           <div class="space-y-6">
@@ -111,15 +109,8 @@
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
-              <a href="#" 
-                 class="w-10 h-10 rounded-full bg-white/5 hover:bg-emerald-500/20 border border-white/10 flex items-center justify-center text-white hover:text-emerald-400 transition-all group">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                </svg>
-              </a>
             </div>
             
-            <!-- Newsletter -->
             <div class="mt-8">
               <p class="text-gray-400 text-sm mb-3">Suscríbete para actualizaciones</p>
               <form @submit.prevent="subscribe" class="flex gap-2">
@@ -135,7 +126,6 @@
         </div>
       </div>
 
-      <!-- Sección legal -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-white/10 py-12 text-sm text-gray-400">
         <div class="space-y-4 group">
           <h5 class="text-emerald-400 font-bold group-hover:text-emerald-300 transition-colors flex items-center gap-2">
@@ -161,7 +151,6 @@
         </div>
       </div>
 
-      <!-- Copyright y tecnologías -->
       <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-4">
           <p class="text-sm text-gray-400">
@@ -219,7 +208,6 @@ const services = [
 ]
 
 const subscribe = () => {
-  // Lógica de suscripción
   console.log('Suscripción enviada')
 }
 </script>
@@ -256,10 +244,5 @@ a:focus, button:focus {
 /* Estilos para el formulario de newsletter */
 input:focus {
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
-}
-
-/* Efecto de gradiente en bordes */
-.border-gradient {
-  border-image: linear-gradient(to right, #10b981, #06b6d4) 1;
 }
 </style>
