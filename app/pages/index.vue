@@ -55,7 +55,7 @@
           
           <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] bg-white/5 backdrop-blur-md rounded-[4rem] border border-white/10 p-4 shadow-2xl overflow-hidden flex items-center justify-center transform lg:rotate-3 hover:rotate-0 transition-all duration-700">
             <img 
-              src="/dacav-logo.png" 
+              src="/dacav-logo.webp" 
               alt="DACAV Logo" 
               class="w-full h-full object-cover rounded-[3.5rem] transform transition-transform duration-1000 group-hover:scale-110"
             />
@@ -240,7 +240,7 @@
           <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-700"></div>
           <div class="relative w-48 h-48 lg:w-56 lg:h-56 bg-gray-900/50 rounded-[2.5rem] border border-white/10 p-2 backdrop-blur-sm shadow-2xl overflow-hidden">
             <img 
-              src="/dacav-logo.png" 
+              src="/dacav-logo.webp" 
               alt="Logo DACAV" 
               class="w-full h-full object-cover rounded-[2rem] transform transition-transform duration-700 group-hover:scale-105" 
             />

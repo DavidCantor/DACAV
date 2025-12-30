@@ -10,7 +10,7 @@
           <div class="flex items-center gap-4">
             <div class="w-17 h-17 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 -mt-1 transform -translate-y-[2px]">
     <img 
-      src="/dacav-logo.png" 
+      src="/dacav-logo.webp" 
       alt="Logo DACAV" 
       class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
     />

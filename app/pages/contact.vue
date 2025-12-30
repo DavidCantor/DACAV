@@ -43,7 +43,7 @@
         
         <div class="text-center mb-10">
           <div class="inline-flex items-center justify-center w-20 h-20 bg-gray-900 rounded-2xl mb-6 mx-auto border border-white/10 shadow-xl group">
-            <img src="/dacav-logo.png" alt="Logo DACAV" class="w-full h-full object-cover p-1" />
+            <img src="/dacav-logo.webp" alt="Logo DACAV" class="w-full h-full object-cover p-1" />
           </div>
           <h2 class="text-white text-3xl font-bold mb-3">Inicia tu proyecto</h2>
           <p class="text-gray-400">Completa todos los campos y te responderemos pronto</p>

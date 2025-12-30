@@ -5,7 +5,7 @@
 <NuxtLink to="/" class="flex items-center gap-4 group transition-transform duration-200 active:scale-95">
   <div class="w-16 h-16 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 -mt-1 transform -translate-y-[2px]">
     <img 
-      src="/dacav-logo.png" 
+      src="/dacav-logo.webp" 
       alt="Logo DACAV" 
       class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
     />
