@@ -111,17 +111,7 @@
               </a>
             </div>
             
-            <div class="mt-8">
-              <p class="text-gray-400 text-sm mb-3">Suscríbete para actualizaciones</p>
-              <form @submit.prevent="subscribe" class="flex gap-2">
-                <input type="email" placeholder="tu@email.com" 
-                       class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors">
-                <button type="submit" 
-                        class="px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-sm font-bold rounded-lg hover:shadow-lg hover:shadow-emerald-500/20 transition-all">
-                  →
-                </button>
-              </form>
-            </div>
+            
           </div>
         </div>
       </div>
