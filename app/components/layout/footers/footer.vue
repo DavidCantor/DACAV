@@ -8,7 +8,7 @@
         
         <div class="lg:col-span-3 space-y-6">
           <div class="flex items-center gap-4">
-            <div class="w-17 h-17 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 -mt-1 transform -translate-y-[2px]">
+            <div class="w-16 h-16 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 -mt-1 transform -translate-y-[2px]">
     <img 
       src="/dacav-logo.webp" 
       alt="Logo DACAV" 
