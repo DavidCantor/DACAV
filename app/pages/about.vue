@@ -23,7 +23,7 @@
         </h1>
         <div class="space-y-8 text-white/80 text-lg md:text-xl leading-relaxed text-left md:text-center max-w-4xl mx-auto">
           <p>
-            DACAV no es solo una agencia; es un compromiso con la <span class="text-white font-bold">excelencia técnica</span>. Creamos ecosistemas digitales que permiten a profesionales y empresas destacar en un mercado saturado.
+            DACAV es un compromiso con la <span class="text-white font-bold">excelencia técnica</span>. Creamos ecosistemas digitales que permiten a profesionales y empresas destacar en un mercado saturado.
           </p>
           <p>
             Eliminamos la fricción entre la idea y la ejecución. Entendemos tu negocio antes de escribir la primera línea de código.
@@ -81,7 +81,7 @@
             <div class="h-1 w-20 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
           </div>
           <p class="text-gray-600 text-lg leading-relaxed">
-            Liderado por un desarrollador con visión integral: la estética del <span class="text-gray-900 font-bold">Frontend moderno (Nuxt)</span> con la robustez de un <span class="text-gray-900 font-bold">Backend sólido (Django)</span>.
+            Liderado por un desarrollador con visión integral: la estructura del <span class="text-gray-900 font-bold">Frontend avanzado de Nuxt (Vue.js)</span> con la estética moderna de <span class="text-gray-900 font-bold">Tailwind CSS.</span> Acompañado del <span class="text-gray-900 font-bold">Backend sólido con Django (Python)</span>.
           </p>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">

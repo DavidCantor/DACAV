@@ -405,7 +405,7 @@
                     </svg>
                   </div>
                   <div class="text-left">
-                    <div class="font-bold text-gray-900">24 horas</div>
+                    <div class="font-bold text-gray-900">48 horas</div>
                     <div class="text-xs text-gray-500">Respuesta inicial</div>
                   </div>
                 </div>

@@ -98,14 +98,7 @@
               <p class="text-gray-600 text-lg max-w-sm transition-colors">{{ service.desc }}</p>
             </div>
             <div class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="inline-flex items-center text-emerald-600 font-semibold">
-                Más información
-                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none"
-                  stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                  </path>
-                </svg>
-              </div>
+           
             </div>
           </div>
         </div>
@@ -140,8 +133,7 @@
               <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-3xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 text-9xl font-black text-white/5">"</div>
                 <p class="text-2xl lg:text-3xl text-white font-light italic leading-snug relative">
-                  "No vendemos humo ni promesas exageradas. Construimos <span class="text-emerald-400 font-bold">webs
-                    bien hechas.</span>"
+                  "Menos promesas, más resultados. <span class="text-emerald-400 font-bold">Sitios web bien hechos.</span>"
                 </p>
                 <div class="mt-8 pt-6 border-t border-white/10">
                   <p class="text-white font-semibold">David Cantor</p>
