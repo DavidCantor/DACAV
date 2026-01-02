@@ -57,7 +57,7 @@
                 🚀
               </div>
               <div>
-                <h2 class="text-3xl font-black tracking-tight text-gray-900">Landing Page Profesional para Negocios Locales</h2>
+                <h2 class="text-3xl font-black tracking-tight text-gray-900">Landing Page Profesional</h2>
                 <h4 class="text-1xl font-black tracking-tight">Tu página web lista en pocos días para recibir clientes</h4>
                 <p class="text-emerald-600 font-bold text-sm mt-1">Lista en 7-14 días • Desde 300.000 COP</p>
               </div>
