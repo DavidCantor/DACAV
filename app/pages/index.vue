@@ -4,7 +4,6 @@
     <InicioServicios />
     <InicioEnfoque />
     <InicioProceso />
-    <InicioAcerca />
     <InicioContacto />
   </div>
 </template>
