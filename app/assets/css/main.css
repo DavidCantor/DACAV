@@ -1,0 +1,17 @@
+/* assets/css/main.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.bg-gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}

@@ -63,12 +63,10 @@ export default defineNuxtConfig({
     '@nuxtjs/robots'   
   ],
 
-  // Corregido: Propiedades válidas para @nuxtjs/sitemap
   sitemap: {
     enabled: true,
   },
 
-  // Corregido: En versiones nuevas no se usa configPath directamente así
   robots: {
 
   },

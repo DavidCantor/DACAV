@@ -1,93 +1,108 @@
 <template>
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-4 sm:px-6 py-3 transition-all duration-300">
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 sm:px-6 lg:px-8" :class="[
+    isScrolled
+      ? 'bg-white py-2 shadow-lg'
+      : 'bg-transparent py-4 sm:py-6'
+  ]">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-<NuxtLink to="/" class="flex items-center gap-4 group transition-transform duration-200 active:scale-95">
-  <div class="w-16 h-16 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 -mt-1 transform -translate-y-[2px]">
-    <img 
-      src="/dacav-logo.webp" 
-      alt="Logo DACAV" 
-      class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
-    />
-  </div>
+      <!-- Logo -->
+      <NuxtLink to="/" class="flex items-center gap-2 sm:gap-4 group transition-transform duration-200 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-2xl">
+        <div class="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 flex items-center justify-center rounded-2xl transition-transform group-hover:shadow-emerald-500/20 transform">
+          <NuxtImg src="/dacav-logo.webp" alt="Logo DACAV"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+            width="80"
+            height="80"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
 
-  <div class="flex flex-col">
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-black text-2xl tracking-tight leading-none transition-colors">
-      DACAV
-    </span>
-    <span class="text-gray-400 text-[10px] font-bold tracking-[0.25em] uppercase mt-1">
-      Web Studio
-    </span>
-  </div>
-</NuxtLink>
+        <div class="flex flex-col">
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-black text-2xl sm:text-3xl lg:text-3xl tracking-tight leading-none transition-colors">
+            DACAV
+          </span>
+          <span class="text-[10px] sm:text-[12px] font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase mt-0.5 sm:mt-1 transition-colors duration-500"
+            :class="isScrolled ? 'text-gray-700' : 'text-white'">
+            Web Studio
+          </span>
+        </div>
+      </NuxtLink>
 
-      <div class="hidden md:flex items-center gap-2">
-        <NuxtLink 
-          v-for="item in navLinks" 
-          :key="item.path" 
-          :to="item.path"
-          class="group relative py-2 px-4 text-sm font-medium transition-all duration-200"
-          :class="[$route.path === item.path ? 'text-emerald-600' : 'text-gray-500 hover:text-emerald-600']"
-        >
-          {{ item.name }}
-          <span 
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full transition-all duration-300"
-            :class="[$route.path === item.path ? 'w-2/3' : 'w-0 group-hover:w-2/3']"
-          ></span>
+      <!-- Navegación desktop - CORREGIDO: los links ahora son visibles -->
+      <div
+        class="hidden md:flex items-center gap-1 px-4 py-2 rounded-full transition-all duration-500 ease-in-out border"
+        :class="[
+          isScrolled
+            ? 'bg-transparent border-transparent'
+            : 'bg-white/10 backdrop-blur-sm border-white/20 shadow-sm'
+        ]">
+        <NuxtLink v-for="item in navLinks" :key="item.path" :to="item.path"
+          class="group relative py-2 px-3 lg:px-4 text-xs lg:text-sm font-semibold transition-colors duration-500 whitespace-nowrap block" 
+          :class="[
+            isScrolled
+              ? ($route.path === item.path ? 'text-emerald-600' : 'text-gray-600 hover:text-emerald-900')
+              : ($route.path === item.path ? 'text-emerald-400' : 'text-white hover:text-emerald-400')
+          ]">
+          <span class="relative z-10">{{ item.name }}</span>
+          <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 rounded-full transition-all duration-500"
+            :class="[
+              $route.path === item.path ? 'w-1/2' : 'w-0 group-hover:w-1/2',
+              isScrolled ? 'bg-emerald-500' : 'bg-white'
+            ]"></span>
         </NuxtLink>
       </div>
 
+      <!-- Botón Cotizar desktop -->
       <div class="hidden md:flex items-center">
-        <NuxtLink 
-          to="/contact" 
-          class="relative overflow-hidden bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center gap-2"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-          </svg>
+        <NuxtLink to="/contact"
+          class="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-5 lg:px-6 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-bold shadow-md hover:shadow-emerald-500/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 whitespace-nowrap">
           <span>Cotizar</span>
         </NuxtLink>
       </div>
 
-      <button @click="isMenuOpen = !isMenuOpen" class="md:hidden p-2 text-gray-600 outline-none">
+      <!-- Botón hamburguesa - CORREGIDA la X -->
+      <button @click="isMenuOpen = !isMenuOpen" 
+        class="md:hidden p-2 rounded-xl transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+        :class="isScrolled ? 'text-gray-600' : 'text-white bg-white/10'"
+        :aria-label="isMenuOpen ? 'Cerrar menú' : 'Abrir menú'"
+        :aria-expanded="isMenuOpen">
         <div class="w-6 h-5 relative flex flex-col justify-between">
-          <span :class="['w-full h-0.5 bg-current transition-all duration-300 transform origin-left', isMenuOpen ? 'rotate-45 translate-x-1' : '']"></span>
-          <span :class="['w-full h-0.5 bg-current transition-all duration-300', isMenuOpen ? 'opacity-0' : '']"></span>
-          <span :class="['w-full h-0.5 bg-current transition-all duration-300 transform origin-left', isMenuOpen ? '-rotate-45 translate-x-1' : '']"></span>
+          <!-- Línea superior -->
+          <span 
+            class="w-full h-0.5 bg-current transition-all duration-300 origin-center"
+            :class="isMenuOpen ? 'rotate-45 translate-y-2.5' : ''"
+          ></span>
+          <!-- Línea media -->
+          <span 
+            class="w-full h-0.5 bg-current transition-all duration-300"
+            :class="isMenuOpen ? 'opacity-0' : ''"
+          ></span>
+          <!-- Línea inferior -->
+          <span 
+            class="w-full h-0.5 bg-current transition-all duration-300 origin-center"
+            :class="isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''"
+          ></span>
         </div>
       </button>
     </div>
 
-    <Transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="opacity-0 -translate-y-2"
-      enter-to-class="opacity-100 translate-y-0"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="opacity-100 translate-y-0"
-      leave-to-class="opacity-0 -translate-y-2"
-    >
-      <div v-if="isMenuOpen" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl">
-        <div class="px-6 py-6 flex flex-col gap-1">
-          <NuxtLink 
-            v-for="item in navLinks" 
-            :key="item.path" 
-            :to="item.path"
-            @click="isMenuOpen = false"
-            :class="['py-3 px-4 rounded-xl transition-all duration-200 font-medium', 
-                    $route.path === item.path ? 'text-emerald-600 bg-emerald-50 font-bold' : 'text-gray-600 hover:bg-gray-50']"
-          >
+    <!-- MENÚ MÓVIL -->
+    <Transition name="menu-fade">
+      <div v-if="isMenuOpen"
+        class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-2xl">
+        <div class="px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-1">
+          <NuxtLink v-for="item in navLinks" :key="item.path" :to="item.path" @click="isMenuOpen = false"
+            class="py-3 sm:py-4 px-4 rounded-xl text-gray-600 font-medium hover:bg-gray-50 transition-colors block w-full text-left"
+            :class="{ 'bg-gray-50 text-emerald-600': $route.path === item.path }">
             {{ item.name }}
           </NuxtLink>
           
-          <div class="mt-4 pt-4 border-t border-gray-100">
-            <NuxtLink 
-              to="/contact" 
-              @click="isMenuOpen = false"
-              class="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-center p-4 rounded-xl font-bold shadow-lg shadow-emerald-500/20 active:scale-[0.98] transition-transform block"
-            >
-              Solicitar Cotización
-            </NuxtLink>
-          </div>
+          <NuxtLink to="/contact" @click="isMenuOpen = false"
+            class="mt-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white py-3 sm:py-4 px-4 rounded-xl font-bold text-center shadow-md hover:shadow-emerald-500/30 transition-all duration-300 block w-full">
+            Cotizar
+          </NuxtLink>
         </div>
       </div>
     </Transition>
@@ -95,11 +110,49 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
+const isScrolled = ref(false)
 const isMenuOpen = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 30
+}
+
+// Cerrar menú al cambiar de ruta
+watch(() => route.path, () => {
+  isMenuOpen.value = false
+})
+
+// Cerrar menú con tecla Escape
+const handleEscape = (event) => {
+  if (event.key === 'Escape' && isMenuOpen.value) {
+    isMenuOpen.value = false
+  }
+}
+
+// Prevenir scroll cuando el menú está abierto
+watch(isMenuOpen, (newValue) => {
+  if (newValue) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
+})
+
+onMounted(() => {
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  document.addEventListener('keydown', handleEscape)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+  document.removeEventListener('keydown', handleEscape)
+  document.body.style.overflow = ''
+})
 
 const navLinks = [
   { name: 'Inicio', path: '/' },
@@ -111,9 +164,29 @@ const navLinks = [
 </script>
 
 <style scoped>
-/* Transición refinada para el desenfoque */
-nav {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.transition-all {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-fade-enter-active,
+.menu-fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.menu-fade-enter-from,
+.menu-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .group .text-2xl {
+    font-size: 1.25rem;
+  }
+  .group .text-\[10px\] {
+    font-size: 8px;
+    letter-spacing: 0.15em;
+  }
 }
 </style>
