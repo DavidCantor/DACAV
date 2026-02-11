@@ -4,7 +4,6 @@
     <InicioServicios />
     <InicioEnfoque />
     <InicioProceso />
-    <InicioProyectos />
     <InicioAcerca />
     <InicioContacto />
   </div>

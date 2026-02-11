@@ -1,41 +1,144 @@
 <template>
-  <section class="py-24 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-gray-900 text-4xl md:text-5xl font-bold mb-20 text-center tracking-tight">
-        Nuestro proceso de trabajo
-      </h2>
-      <div class="space-y-16">
-        <div v-for="(step, index) in steps" :key="index" class="relative">
-          <div class="grid grid-cols-1 md:grid-cols-12 md:gap-8 items-start">
-            <div class="md:col-span-3 mb-6 md:mb-0">
-              <div class="text-6xl md:text-7xl font-black text-emerald-100">0{{ index + 1 }}</div>
-              <div class="hidden md:block h-px w-full bg-gradient-to-r from-emerald-400 to-cyan-400 mt-4"></div>
+    <section ref="sectionRef" class="relative py-24 px-4 sm:px-6 bg-[#0B0F1A] overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div
+                class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2">
             </div>
             <div
-              class="md:col-span-9 bg-white p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h3 class="text-gray-900 font-bold text-2xl mb-4">{{ step.title }}</h3>
-              <p class="text-gray-600 text-lg leading-relaxed">{{ step.desc }}</p>
-              <div class="mt-6 flex items-center text-emerald-600 font-medium">
-                <span>Paso {{ index + 1 }} de {{ steps.length }}</span>
-                <div class="ml-4 flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
-                  <div class="h-full bg-gradient-to-r from-emerald-400 to-cyan-400"
-                    :style="{ width: `${(index + 1) * 20}%` }"></div>
-                </div>
-              </div>
+                class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2">
             </div>
-          </div>
+            <div class="absolute inset-0 opacity-[0.03]"
+                style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20 opacity-0" :class="{ 'animate-slide-up': isVisible }">
+                <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+                    Nuestro proceso de <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">trabajo</span>
+                </h2>
+                <p class="text-gray-400 text-lg font-medium">Una metodología transparente diseñada para que sepas
+                    exactamente en qué etapa estamos.</p>
+            </div>
+
+            <div class="relative space-y-12">
+                <div class="hidden md:block absolute left-[12.5%] top-10 bottom-10 w-px bg-gray-800" aria-hidden="true">
+                    <div class="h-full bg-gradient-to-b from-emerald-500 to-cyan-500 origin-top transition-transform duration-1000 scale-y-0"
+                        :class="{ 'scale-y-100': isVisible }"></div>
+                </div>
+
+                <div v-for="(step, index) in steps" :key="index" class="relative group opacity-0"
+                    :class="{ 'animate-slide-up': isVisible }"
+                    :style="{ animationDelay: `${0.2 + index * 0.15}s`, animationFillMode: 'forwards' }">
+
+                    <div class="grid grid-cols-1 md:grid-cols-12 md:gap-12 items-center">
+
+                        <div class="md:col-span-3 mb-4 md:mb-0 flex flex-col items-start md:items-center">
+                            <div class="relative">
+                                <div class="text-8xl md:text-9xl font-black leading-none transition-all duration-500 
+                            text-emerald-500/10 group-hover:text-emerald-400 group-hover:drop-shadow-[0_0_20px_rgba(52,211,153,0.6)]"
+                                    style="-webkit-text-stroke: 1.5px rgba(52,211,153,0.4);">
+                                    0{{ index + 1 }}
+                                </div>
+
+                                <div
+                                    class="hidden md:block absolute top-1/2 -right-6 w-6 h-6 rounded-full bg-emerald-400 shadow-[0_0_25px_#34d399] z-20 translate-x-1/2 -translate-y-1/2 border-4 border-[#05070A]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="md:col-span-9 bg-gray-900/50 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-white/5 group-hover:border-emerald-500/30 transition-all duration-500 relative overflow-hidden group-hover:-translate-y-1 shadow-2xl">
+
+                            <div
+                                class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+
+                            <div class="relative z-10">
+                                <h3
+                                    class="text-white font-bold text-2xl mb-4 flex items-center gap-3 transition-colors group-hover:text-emerald-400">
+                                    <span
+                                        class="md:hidden w-8 h-8 rounded-lg bg-emerald-500 text-[#0B0F1A] flex items-center justify-center text-sm font-black shadow-[0_0_15px_rgba(16,185,129,0.4)]">0{{
+                                        index + 1 }}</span>
+                                    {{ step.title }}
+                                </h3>
+                                <p
+                                    class="text-gray-400 text-lg leading-relaxed max-w-3xl group-hover:text-gray-300 transition-colors">
+                                    {{ step.desc }}</p>
+
+                                <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                                    <div class="flex items-center gap-2 min-w-[120px]">
+                                        <span
+                                            class="text-[10px] font-black uppercase tracking-[0.15em] text-emerald-400">Fase
+                                            Actual</span>
+                                    </div>
+                                    <div class="flex-1 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-400 transition-all duration-1000 ease-out shadow-[0_0_12px_rgba(16,185,129,0.5)]"
+                                            :style="{ width: isVisible ? `${(index + 1) * 20}%` : '0%' }"></div>
+                                    </div>
+                                    <span class="text-xs font-bold text-emerald-500/50">{{ (index + 1) * 20 }}%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+
 const steps = [
-  { title: 'Análisis y objetivos', desc: 'Entendemos tu negocio, tus clientes y qué necesitas lograr.' },
-  { title: 'Propuesta clara', desc: 'Definimos alcance, tiempos y entregables sin letra pequeña.' },
-  { title: 'Diseño y desarrollo', desc: 'Construimos tu sitio con una estructura clara y diseño profesional.' },
-  { title: 'Revisión y ajustes', desc: 'Revisamos juntos y ajustamos lo necesario.' },
-  { title: 'Entrega y soporte', desc: 'Publicamos tu web y te acompañamos después del lanzamiento.' }
+    { title: 'Análisis y objetivos', desc: 'Entendemos tu negocio y qué necesitas lograr. No solo hacemos una web, creamos una herramienta comercial estratégica.' },
+    { title: 'Propuesta clara', desc: 'Definimos alcance, tiempos y entregables sin letra pequeña. Recibes un presupuesto cerrado y transparente.' },
+    { title: 'Diseño y desarrollo', desc: 'Construimos tu sitio con una estructura clara, diseño profesional y código optimizado para máximo rendimiento.' },
+    { title: 'Revisión y ajustes', desc: 'Revisamos juntos cada detalle. Tu feedback es fundamental para asegurar que el resultado supere tus expectativas.' },
+    { title: 'Entrega y soporte', desc: 'Publicamos tu web y te acompañamos después del lanzamiento para asegurar que todo funcione como un reloj.' }
 ]
+
+const sectionRef = ref(null)
+const isVisible = ref(false)
+
+onMounted(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+            isVisible.value = true
+            observer.disconnect()
+        }
+    }, { threshold: 0.15 })
+
+    if (sectionRef.value) observer.observe(sectionRef.value)
+})
 </script>
+
+<style scoped>
+.opacity-0 {
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Efecto de suavizado para el fondo oscuro */
+section {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+</style>
