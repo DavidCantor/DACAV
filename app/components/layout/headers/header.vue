@@ -157,7 +157,7 @@ onUnmounted(() => {
 const navLinks = [
   { name: 'Inicio', path: '/' },
   { name: 'Servicios', path: '/services' },
-  { name: 'Proyectos', path: '/projects' },
+  { name: 'Casos de éxito', path: '/results' },
   { name: 'Nosotros', path: '/about' },
   { name: 'Contacto', path: '/contact' }
 ]
